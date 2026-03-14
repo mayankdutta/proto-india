@@ -13,8 +13,11 @@ export default function ServicesSection() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding bg-surface-50">
-      <div className="container-max">
+    <section className="section-padding bg-surface-50 relative overflow-hidden">
+      {/* Blueprint grid background */}
+      <div className="absolute inset-0 blueprint-grid opacity-30" />
+
+      <div className="container-max relative">
         <SectionHeading
           title="Our Services"
           subtitle="Comprehensive tooling solutions from design to production"
@@ -22,18 +25,19 @@ export default function ServicesSection() {
 
         <div
           ref={ref}
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
-            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {SERVICES.map((service) => {
+          {SERVICES.map((service, i) => {
             const Icon = ICON_MAP[service.icon];
             return (
               <div
                 key={service.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-surface-100 card-hover"
+                className={`group bg-white rounded-2xl overflow-hidden border border-surface-100
+                  card-hover relative
+                  ${isInView ? "animate-scale-in" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.1}s` }}
               >
-                {/* Service image */}
+                {/* Service image with grid overlay */}
                 <div className="relative h-40 overflow-hidden">
                   <img
                     src={service.image}
@@ -41,10 +45,19 @@ export default function ServicesSection() {
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/50 to-transparent`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
+                  {/* Blueprint grid overlay on hover — like a CAD viewport */}
+                  <div className="absolute inset-0 blueprint-grid-dark opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+
                   <div className={`absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}>
                     <Icon className="w-5 h-5 text-white" />
                   </div>
+
+                  {/* Technical spec tag — top right corner */}
+                  <span className="absolute top-2 right-2 px-2 py-0.5 bg-black/40 backdrop-blur-sm text-[10px] font-mono text-white/70 rounded">
+                    {service.capabilities?.split(",")[0] || "Precision"}
+                  </span>
                 </div>
 
                 <div className="p-5">
@@ -75,6 +88,9 @@ export default function ServicesSection() {
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
+
+                {/* Molten accent line — bottom edge glows on hover */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             );
           })}

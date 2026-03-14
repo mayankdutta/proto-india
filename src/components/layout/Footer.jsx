@@ -4,9 +4,12 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-900 text-white/80">
+    <footer className="bg-surface-900 text-white/80 relative overflow-hidden">
+      {/* Dark blueprint grid background */}
+      <div className="absolute inset-0 blueprint-grid-dark opacity-40" />
+
       {/* Main Grid */}
-      <div className="container-max section-padding !py-12">
+      <div className="container-max section-padding !py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -29,6 +32,11 @@ export default function Footer() {
               Specializing in precision injection mould design, manufacturing,
               and CNC machining services.
             </p>
+            {/* ISO badge — industrial certification mark */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/10 rounded text-xs font-mono text-white/40">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              ISO 9001:2015 CERTIFIED
+            </div>
           </div>
 
           {/* Link Columns */}
@@ -82,7 +90,7 @@ export default function Footer() {
                 <Clock className="w-4 h-4 shrink-0 text-white/40" />
                 <span>{COMPANY.hours}</span>
               </div>
-              <p className="text-xs text-white/30 pt-1">
+              <p className="text-xs text-white/30 pt-1 font-mono">
                 GST: {COMPANY.gst}
               </p>
             </div>
@@ -90,8 +98,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      {/* Bottom Bar — with riveted edge */}
+      <div className="border-t border-white/10 relative riveted-edge">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <span>
             &copy; {new Date().getFullYear()} {COMPANY.name}. All rights
@@ -101,7 +109,7 @@ export default function Footer() {
             {COMPANY.certifications.map((cert) => (
               <span
                 key={cert}
-                className="px-2 py-1 rounded bg-white/5 text-white/50 font-medium"
+                className="px-2 py-1 rounded bg-white/5 text-white/50 font-medium font-mono"
               >
                 {cert}
               </span>

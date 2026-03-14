@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -52,6 +52,195 @@
       radial-gradient(ellipse at 20% 50%, rgba(0,102,204,0.08) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 20%, rgba(255,107,0,0.06) 0%, transparent 50%),
       radial-gradient(ellipse at 50% 80%, rgba(0,102,204,0.04) 0%, transparent 50%);
+  }
+
+  /* ============================================================
+     INDUSTRIAL DESIGN SYSTEM — Manufacturing Aesthetic
+     ============================================================ */
+
+  /* Blueprint Grid — engineering paper background */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(26, 86, 219, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 86, 219, 0.06) 1px, transparent 1px),
+      linear-gradient(rgba(26, 86, 219, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 86, 219, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+  }
+
+  /* Dark blueprint variant — for dark sections */
+  .blueprint-grid-dark {
+    background-image:
+      linear-gradient(rgba(96, 165, 250, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.08) 1px, transparent 1px),
+      linear-gradient(rgba(96, 165, 250, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+  }
+
+  /* Metallic Sheen — brushed steel gradient on text/cards */
+  .metallic-sheen {
+    background: linear-gradient(
+      110deg,
+      #1e293b 0%,
+      #475569 25%,
+      #94a3b8 50%,
+      #475569 75%,
+      #1e293b 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+
+  /* Metallic Card Surface — subtle brushed metal feel */
+  .metallic-surface {
+    background: linear-gradient(
+      135deg,
+      #f8fafc 0%,
+      #e2e8f0 30%,
+      #f1f5f9 50%,
+      #e2e8f0 70%,
+      #f8fafc 100%
+    );
+  }
+
+  /* Molten Border — animated gradient border like molten metal */
+  .molten-border {
+    position: relative;
+    overflow: hidden;
+  }
+  .molten-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: linear-gradient(
+      45deg,
+      #ea580c,
+      #f97316,
+      #fbbf24,
+      #f97316,
+      #ea580c
+    );
+    background-size: 300% 300%;
+    animation: moltenFlow 3s ease-in-out infinite;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+  }
+
+  /* CNC Toolpath Divider — animated line that draws itself */
+  .toolpath-divider {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: drawLine 1.5s ease-out forwards;
+  }
+
+  /* Dimension Line — technical drawing measurement */
+  .dimension-line {
+    position: relative;
+  }
+  .dimension-line::before,
+  .dimension-line::after {
+    content: "";
+    position: absolute;
+    background: rgba(26, 86, 219, 0.3);
+  }
+  .dimension-line::before {
+    top: 0;
+    bottom: 0;
+    left: -12px;
+    width: 1px;
+  }
+  .dimension-line::after {
+    top: 0;
+    bottom: 0;
+    right: -12px;
+    width: 1px;
+  }
+
+  /* Hydraulic Press Button — CTA with industrial press feel */
+  .btn-accent.press-effect {
+    position: relative;
+    transition: all 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .btn-accent.press-effect:active {
+    transform: scale(0.94) translateY(2px);
+    box-shadow: 0 1px 4px rgba(234, 88, 12, 0.3);
+  }
+
+  /* Crosshair Marker — decorative blueprint crosshair */
+  .crosshair {
+    position: relative;
+  }
+  .crosshair::before,
+  .crosshair::after {
+    content: "";
+    position: absolute;
+    background: rgba(26, 86, 219, 0.15);
+  }
+  .crosshair::before {
+    width: 20px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .crosshair::after {
+    width: 1px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Spark Container — holds CSS-only spark particles */
+  .spark-container {
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+    inset: 0;
+  }
+  .spark-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fbbf24;
+    box-shadow: 0 0 6px 2px rgba(251, 191, 36, 0.6);
+    animation: spark 0.8s ease-out forwards;
+  }
+
+  /* Steel Section — dark industrial background */
+  .steel-section {
+    background: linear-gradient(
+      180deg,
+      #111827 0%,
+      #1f2937 50%,
+      #111827 100%
+    );
+  }
+
+  /* Riveted Edge — industrial rivet decoration */
+  .riveted-edge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 58px,
+      rgba(148, 163, 184, 0.3) 58px,
+      rgba(148, 163, 184, 0.3) 62px
+    );
   }
 }
 

@@ -21,11 +21,20 @@ function ScrollToTop() {
   return null;
 }
 
+// Interlocking gear animation — replaces generic spinner
+const GearLoader = lazy(() => import("./components/ui/GearLoader"));
+
 function PageLoader() {
   return (
-    <div className="min-h-[60vh] flex items-center justify-center">
-      <div className="w-8 h-8 border-3 border-primary-500 border-t-transparent rounded-full animate-spin" />
-    </div>
+    <Suspense
+      fallback={
+        <div className="min-h-[60vh] flex items-center justify-center">
+          <div className="w-8 h-8 border-3 border-primary-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      }
+    >
+      <GearLoader />
+    </Suspense>
   );
 }
 

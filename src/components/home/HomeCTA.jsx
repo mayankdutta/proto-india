@@ -1,4 +1,5 @@
 import Button from "../ui/Button";
+import SparkBurst from "../ui/SparkBurst";
 import { useInView } from "../../hooks/useInView";
 
 export default function HomeCTA() {
@@ -6,9 +7,16 @@ export default function HomeCTA() {
 
   return (
     <section className="section-padding bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 relative overflow-hidden">
-      {/* Decorative circles */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white/5 translate-y-1/2 -translate-x-1/3" />
+      {/* Blueprint grid overlay — dark variant */}
+      <div className="absolute inset-0 blueprint-grid-dark opacity-40" />
+
+      {/* Decorative circles — like cross-section views of mould cavities */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full border border-white/5 -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute top-0 right-0 w-72 h-72 rounded-full border border-white/[0.03] -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full border border-white/5 translate-y-1/2 -translate-x-1/3" />
+
+      {/* Spark particles */}
+      <SparkBurst active={isInView} />
 
       <div
         ref={ref}
@@ -16,6 +24,12 @@ export default function HomeCTA() {
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
+        {/* Technical label */}
+        <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-mono text-white/50 border border-white/10 rounded">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse-glow" />
+          PROJECT INQUIRY
+        </span>
+
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
           Ready to Start Your Project?
         </h2>
@@ -28,7 +42,7 @@ export default function HomeCTA() {
             variant="accent"
             arrow
             id="home-cta-request-quote"
-            className="text-base px-8 py-3.5"
+            className="text-base px-8 py-3.5 press-effect"
           >
             Request a Quote
           </Button>
