@@ -115,9 +115,9 @@ function SuccessStoriesSection() {
 
   // Map success story industries to relevant images
   const storyImages = [
-    "/assets/industries/automotive.jpg",
-    "/assets/industries/consumer-electronics.jpg",
-    "/assets/industries/medical.jpg",
+    "/assets/industries/automotive.webp",
+    "/assets/industries/consumer-electronics.webp",
+    "/assets/industries/medical.webp",
   ];
 
   return (

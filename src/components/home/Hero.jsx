@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Background — hero image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="/assets/hero/hero-bg.jpg"
+          src="/assets/hero/hero-bg.webp"
           alt=""
           className="w-full h-full object-cover"
         />

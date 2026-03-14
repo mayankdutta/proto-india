@@ -37,7 +37,7 @@ function StorySection() {
           {/* Factory image */}
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/assets/about/factory-workshop.jpg"
+              src="/assets/about/factory-workshop.webp"
               alt="Sharma Tools factory workshop"
               className="w-full h-full object-cover"
             />
@@ -66,7 +66,7 @@ function MissionVision() {
         {/* Team image banner */}
         <div className="rounded-2xl overflow-hidden mb-8 h-56 relative">
           <img
-            src="/assets/about/team-engineering.jpg"
+            src="/assets/about/team-engineering.webp"
             alt="Sharma Tools engineering team"
             loading="lazy"
             className="w-full h-full object-cover"
