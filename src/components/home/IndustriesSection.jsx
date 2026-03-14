@@ -1,67 +1,52 @@
-import { Link } from "react-router-dom";
-import { Rocket, Car, Smartphone, Heart, Bot, Wrench, ArrowRight } from "lucide-react";
+import {
+  Smartphone, Car, Zap, Refrigerator, Package, Heart,
+} from "lucide-react";
 import { INDUSTRIES } from "../../data/siteData";
 import { useInView } from "../../hooks/useInView";
 import SectionHeading from "../ui/SectionHeading";
+import Button from "../ui/Button";
 
-const ICONS = { Rocket, Car, Smartphone, Heart, Bot, Wrench };
-
-const GRADIENT_PAIRS = [
-  "from-blue-500/10 to-indigo-500/5",
-  "from-emerald-500/10 to-teal-500/5",
-  "from-violet-500/10 to-purple-500/5",
-  "from-rose-500/10 to-pink-500/5",
-  "from-amber-500/10 to-orange-500/5",
-  "from-cyan-500/10 to-sky-500/5",
-];
+const ICON_MAP = { Smartphone, Car, Zap, Refrigerator, Package, Heart };
 
 export default function IndustriesSection() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-surface-50">
       <div className="container-max">
         <SectionHeading
-          title="Major Industries Served"
-          subtitle="We work with leading companies across India's fastest-growing sectors."
+          title="Industries We Serve"
+          subtitle="Trusted by leading companies across diverse sectors"
         />
 
         <div
           ref={ref}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className={`grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 transition-all duration-700 ${
+            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
         >
-          {INDUSTRIES.map((ind, i) => {
-            const Icon = ICONS[ind.icon];
+          {INDUSTRIES.map((ind) => {
+            const Icon = ICON_MAP[ind.icon];
             return (
-              <Link
+              <div
                 key={ind.id}
-                to={ind.href}
-                className={`group relative rounded-xl border border-surface-100 p-6 card-hover overflow-hidden
-                  transition-all duration-500 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                style={{ transitionDelay: isInView ? `${i * 80}ms` : "0ms" }}
+                className="group bg-white rounded-2xl p-6 border border-surface-100 text-center card-hover"
               >
-                {/* Background gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${GRADIENT_PAIRS[i]} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                />
-
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-surface-50 group-hover:bg-white flex items-center justify-center mb-4 transition-colors border border-surface-100">
-                    {Icon && <Icon className="w-5 h-5 text-primary-500" />}
-                  </div>
-                  <h3 className="font-heading font-bold text-surface-900 group-hover:text-primary-600 transition-colors">
-                    {ind.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
-                    {ind.description}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-500 group-hover:gap-2.5 transition-all">
-                    Learn More <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
+                <div className="w-14 h-14 mx-auto rounded-xl bg-primary-50 group-hover:bg-primary-500 flex items-center justify-center transition-colors duration-300">
+                  <Icon className="w-7 h-7 text-primary-500 group-hover:text-white transition-colors duration-300" />
                 </div>
-              </Link>
+                <h3 className="mt-4 font-bold text-surface-900 text-sm lg:text-base">
+                  {ind.title}
+                </h3>
+              </div>
             );
           })}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button href="/industries" variant="outline" id="home-explore-industries-cta">
+            Explore All Industries
+          </Button>
         </div>
       </div>
     </section>

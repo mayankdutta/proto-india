@@ -1,439 +1,378 @@
 // ============================================================
-// All site content centralized here — like a single source of truth.
-// Think of this as your "database" for the static site.
+// Sharma Tools — single source of truth for all site content
 // ============================================================
 
 export const COMPANY = {
-  name: "ProtoFab India",
-  tagline: "Digital Manufacturing for India",
-  phone: "+91 11 4567 8900",
-  email: "info@protofab.in",
+  name: "Sharma Tools",
+  shortName: "ST",
+  tagline: "Precision Tooling Solutions",
+  phone: "+91-9876543210",
+  email: "info@sharmatools.com",
+  gst: "07XXXXX1234X1ZX",
   address: {
-    line1: "Plot 42, Sector 57",
-    line2: "NOIDA, Uttar Pradesh",
-    pin: "201301",
+    line1: "Plot No. 123, Sector 24",
+    line2: "Industrial Area",
+    city: "Delhi",
+    pin: "110020",
     country: "India",
   },
-  certifications: ["ISO 9001:2015", "ISO 13485:2016", "AS9100D"],
+  hours: "Mon - Sat: 9:00 AM - 6:00 PM",
+  certifications: ["ISO 9001:2015"],
 };
 
 export const NAV_LINKS = [
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      {
-        group: "Injection Moulding",
-        href: "/services/injection-moulding",
-        items: [
-          { label: "Plastic Injection Moulding", href: "/services/injection-moulding/plastic" },
-          { label: "Liquid Silicone Rubber", href: "/services/injection-moulding/lsr" },
-          { label: "Insert Moulding", href: "/services/injection-moulding/insert" },
-          { label: "Overmoulding", href: "/services/injection-moulding/over" },
-        ],
-      },
-      {
-        group: "CNC Machining",
-        href: "/services/cnc-machining",
-        items: [
-          { label: "CNC Milling", href: "/services/cnc-machining/milling" },
-          { label: "CNC Turning", href: "/services/cnc-machining/turning" },
-          { label: "Threading", href: "/services/cnc-machining/threading" },
-        ],
-      },
-      {
-        group: "3D Printing",
-        href: "/services/3d-printing",
-        items: [
-          { label: "SLA (Stereolithography)", href: "/services/3d-printing/sla" },
-          { label: "Metal 3D Printing (DMLS)", href: "/services/3d-printing/dmls" },
-          { label: "Multi Jet Fusion", href: "/services/3d-printing/mjf" },
-          { label: "SLS", href: "/services/3d-printing/sls" },
-        ],
-      },
-    ],
-  },
-  { label: "Materials", href: "/materials" },
-  { label: "Industries", href: "/industries" },
-  { label: "Resources", href: "/resources" },
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Industries", href: "/industries" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const STATS = [
+  { value: "15+", label: "Years of Experience" },
+  { value: "200+", label: "Satisfied Clients" },
+  { value: "500+", label: "Projects Completed" },
+  { value: "98%", label: "On-Time Delivery" },
+];
+
+export const WHY_CHOOSE_US = [
+  {
+    title: "Superior Quality",
+    description:
+      "ISO certified manufacturing processes ensuring precision and consistency in every project",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "On-Time Delivery",
+    description:
+      "98% on-time delivery rate with efficient project management and production planning",
+    icon: "Clock",
+  },
+  {
+    title: "Expert Team",
+    description:
+      "15+ years of industry experience with skilled engineers and technicians",
+    icon: "Users",
+  },
 ];
 
 export const SERVICES = [
   {
-    id: "injection-moulding",
-    title: "Injection Moulding",
+    id: "injection-mould-design",
+    title: "Injection Mould Design",
     shortDesc:
-      "Get affordable, high-quality moulded parts and bridge tooling within days. Free mouldability consultation accelerates design and saves time and money.",
+      "Expert CAD/CAM design services using latest software for optimal part quality and production efficiency.",
     features: [
-      "Low-volume moulding up to 1,00,000+ parts — no MOQ required",
-      "100+ plastic, elastomeric, and silicone rubber materials",
-      "Automated CMM for fast, in-house quality documentation",
-      "Moulds starting from ₹85,000",
+      "3D mould flow analysis",
+      "Design optimization",
+      "Prototype development",
+      "Technical consultation",
     ],
-    href: "/services/injection-moulding",
-    icon: "Layers",
+    capabilities: "SolidWorks, Creo, CATIA, AutoCAD",
+    icon: "PenTool",
     color: "from-blue-500 to-indigo-600",
+  },
+  {
+    id: "injection-mould-manufacturing",
+    title: "Injection Mould Manufacturing",
+    shortDesc:
+      "Precision manufacturing of high-quality injection moulds for diverse applications and industries.",
+    features: [
+      "Multi-cavity moulds",
+      "Hot runner systems",
+      "Complex geometries",
+      "Quality assurance",
+    ],
+    capabilities: "Up to 500 ton mould capacity",
+    icon: "Layers",
+    color: "from-emerald-500 to-teal-600",
   },
   {
     id: "cnc-machining",
     title: "CNC Machining",
     shortDesc:
-      "Leverage speed, precision, and reliability in machining with advanced capabilities like tighter tolerances and volume pricing through our manufacturing network.",
+      "Advanced CNC machining services including EDM, milling, and turning for precision components.",
     features: [
-      "Machined parts in as fast as 1 day with plating & anodising in 6 days",
-      "Cost-efficient machined parts at higher volumes",
-      "Tolerances down to ±0.025 mm, tighter available on request",
+      "High precision (+/- 0.01mm)",
+      "3-axis & 5-axis machining",
+      "Wire EDM",
+      "Surface grinding",
     ],
-    href: "/services/cnc-machining",
+    capabilities: "Steel, aluminum, copper, exotic alloys",
     icon: "Cog",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-orange-500 to-red-500",
   },
   {
-    id: "3d-printing",
-    title: "3D Printing",
+    id: "mould-repair",
+    title: "Mould Repair & Maintenance",
     shortDesc:
-      "Quality parts and additive expertise from a single source. Choose from seven additive manufacturing technologies for cost-effective prototyping and production parts.",
+      "Expert repair and preventive maintenance services to extend mould life and minimize downtime.",
     features: [
-      "Technologies include DMLS, SLA, SLS, MJF and more",
-      "30+ plastic and metal materials in a range of finishes",
-      "20+ years of additive manufacturing expertise in India",
+      "Quick turnaround",
+      "Cavity restoration",
+      "Chrome plating",
+      "On-site support",
     ],
-    href: "/services/3d-printing",
-    icon: "Printer",
-    color: "from-orange-500 to-red-500",
+    capabilities: "All mould types and sizes",
+    icon: "Wrench",
+    color: "from-violet-500 to-purple-600",
+  },
+  {
+    id: "injection-molding-production",
+    title: "Injection Molding Production",
+    shortDesc:
+      "Complete injection molding production services from prototypes to mass production runs.",
+    features: [
+      "50T to 500T machines",
+      "Quality inspection",
+      "Assembly services",
+      "Packaging solutions",
+    ],
+    capabilities: "Thermoplastics & engineering plastics",
+    icon: "Factory",
+    color: "from-cyan-500 to-blue-600",
+  },
+  {
+    id: "product-development",
+    title: "Product Development",
+    shortDesc:
+      "End-to-end product development support from concept to production-ready tooling.",
+    features: [
+      "DFM analysis",
+      "Material selection",
+      "Cost optimization",
+      "Prototyping",
+    ],
+    capabilities: "Full project management",
+    icon: "Lightbulb",
+    color: "from-amber-500 to-orange-600",
   },
 ];
 
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Upload a CAD File",
-    description: "Select a manufacturing process and upload your 3D CAD file to get started.",
-    icon: "Upload",
+    title: "Consultation",
+    description: "Understanding your requirements and specifications",
+    icon: "MessageSquare",
   },
   {
     step: 2,
-    title: "Receive Quote with Free DFM",
-    description:
-      "Within hours, get design-for-manufacturability analysis and real-time pricing in INR.",
-    icon: "FileCheck",
+    title: "Design",
+    description: "CAD/CAM design and DFM analysis",
+    icon: "PenTool",
   },
   {
     step: 3,
-    title: "Manufacturing Begins",
-    description:
-      "Review your quote and place your order. We start manufacturing with optional finishing.",
-    icon: "Factory",
+    title: "Manufacturing",
+    description: "Precision machining and assembly",
+    icon: "Cog",
   },
   {
     step: 4,
-    title: "Parts Shipped Pan-India",
-    description:
-      "Our digital manufacturing process delivers parts in as fast as 1 day across India.",
+    title: "Testing",
+    description: "Quality inspection and trial runs",
+    icon: "ClipboardCheck",
+  },
+  {
+    step: 5,
+    title: "Delivery",
+    description: "On-time delivery with documentation",
     icon: "Truck",
   },
 ];
 
 export const INDUSTRIES = [
   {
-    id: "aerospace",
-    title: "Aerospace & Defence",
-    description: "High-quality components from prototyping to production for ISRO, HAL, and private space companies",
-    href: "/industries/aerospace",
-    icon: "Rocket",
+    id: "consumer-electronics",
+    title: "Consumer Electronics",
+    description:
+      "Precision moulds for electronic housings, connectors, and components",
+    icon: "Smartphone",
   },
   {
     id: "automotive",
     title: "Automotive",
-    description: "Rapid prototyping for traditional, EV, and autonomous vehicle manufacturers across India",
-    href: "/industries/automotive",
+    description:
+      "High-quality tooling for interior trim, under-hood components, and assemblies",
     icon: "Car",
   },
   {
-    id: "consumer-electronics",
-    title: "Consumer Electronics",
-    description: "Functional prototyping and on-demand production for electronics and IoT devices",
-    href: "/industries/consumer-electronics",
-    icon: "Smartphone",
+    id: "electrical",
+    title: "Electrical Fittings",
+    description:
+      "Moulds for switches, sockets, junction boxes, and electrical enclosures",
+    icon: "Zap",
+  },
+  {
+    id: "appliances",
+    title: "Home Appliances",
+    description:
+      "Precision tooling for kitchen appliances, white goods, and consumer products",
+    icon: "Refrigerator",
+  },
+  {
+    id: "packaging",
+    title: "Packaging",
+    description:
+      "Custom moulds for bottles, containers, caps, and packaging solutions",
+    icon: "Package",
   },
   {
     id: "medical",
     title: "Medical Devices",
-    description: "Accelerated development of medical devices with ISO 13485 certified manufacturing",
-    href: "/industries/medical",
+    description:
+      "Clean-room compatible moulds for medical components and devices",
     icon: "Heart",
   },
+];
+
+export const INDUSTRY_STRENGTHS = [
   {
-    id: "robotics",
-    title: "Robotics & Automation",
-    description: "Complex end-use production parts for India's growing robotics ecosystem",
-    href: "/industries/robotics",
-    icon: "Bot",
+    title: "Industry-Specific Expertise",
+    description:
+      "Deep understanding of material requirements, tolerances, and production volumes specific to each industry sector",
+    icon: "Award",
   },
   {
-    id: "industrial",
-    title: "Industrial Equipment",
-    description: "Durable jigs, fixtures, and components to streamline assembly and reduce costs",
-    href: "/industries/industrial",
-    icon: "Wrench",
+    title: "Compliance & Standards",
+    description:
+      "Adherence to industry standards including ISO, automotive PPAP, and medical device regulations",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Scalable Solutions",
+    description:
+      "From prototype to mass production, we scale our capabilities to match your production requirements",
+    icon: "TrendingUp",
+  },
+  {
+    title: "Technical Support",
+    description:
+      "Ongoing engineering support for design optimization, troubleshooting, and continuous improvement",
+    icon: "Headphones",
   },
 ];
 
-export const WHATS_NEW = [
+export const TESTIMONIALS = [
   {
-    title: "AS9100D Certified",
-    description:
-      "Our NOIDA CNC facility has achieved AS9100D certification — the internationally recognised quality standard for aerospace and defence manufacturing.",
-    tag: "Certification",
-    href: "/certifications",
+    text: "Sharma Tools delivered exceptional quality moulds within the promised timeline. Their attention to detail and technical expertise is outstanding.",
+    author: "Rajesh Kumar",
+    role: "Production Manager",
+    company: "TechnoPlast Industries",
   },
   {
-    title: "Meet ProDesk by ProtoFab",
-    description:
-      "Our enhanced digital platform for quoting, ordering, and managing custom parts. Get real-time pricing in INR with AI-enabled DFM feedback.",
-    tag: "Platform",
-    href: "/prodesk",
+    text: "We have been working with Sharma Tools for over 3 years. Their CNC machining precision and after-sales service is unmatched in the industry.",
+    author: "Priya Sharma",
+    role: "CEO",
+    company: "ElectroFit Components",
   },
   {
-    title: "Trusted Partner for Production",
-    description:
-      "Our team is ready to help you scale production projects with expert guidance at every step — from prototype to 1,00,000+ parts.",
-    tag: "Production",
-    href: "/services/production",
-  },
-  {
-    title: "DLS by Carbon Now Available",
-    description:
-      "Digital Light Synthesis by Carbon with 4 new materials for flexible and rigid parts. Rapidly produce genuine end-use parts at scale.",
-    tag: "3D Printing",
-    href: "/services/3d-printing/carbon-dls",
-  },
-  {
-    title: "Quality Inspections for Moulding",
-    description:
-      "Critical-to-quality inspections are now configurable within your injection moulding quote, along with additional quality documentation.",
-    tag: "Quality",
-    href: "/services/injection-moulding/quality",
-  },
-  {
-    title: "inspirON Academy India",
-    description:
-      "Free CPD-accredited training by engineers, for engineers. Learn at your own pace with upfront training materials.",
-    tag: "Learning",
-    href: "/resources/inspiron-academy",
+    text: "From design to production, Sharma Tools team guided us through every step. The moulds have been running flawlessly for over 2 years now.",
+    author: "Amit Patel",
+    role: "Engineering Head",
+    company: "AutoParts Manufacturing Ltd.",
   },
 ];
 
-export const LIFECYCLE_STAGES = [
+export const GALLERY_ITEMS = [
+  { title: "CNC Machining Operation", category: "cnc" },
+  { title: "Precision Mould Manufacturing", category: "mould" },
+  { title: "CNC Lathe Work", category: "cnc" },
+  { title: "Industrial Tooling", category: "mould" },
+  { title: "Precision Manufacturing", category: "cnc" },
+  { title: "Welding Expertise", category: "manufacturing" },
+  { title: "Manufacturing Process", category: "manufacturing" },
+  { title: "Precision Gears", category: "manufacturing" },
+];
+
+export const FEATURED_PROJECTS = [
   {
-    title: "Full Product Life Cycle",
+    title: "Automotive Interior Trim Mould",
     description:
-      "From prototype parts in one day to full-service production — partner with us across your entire product life cycle for speed, quality, and cost-efficiency.",
+      "Complex 4-cavity mould for automotive interior trim components. Features include hot runner system, hydraulic core pulls, and precision surface finish requirements.",
+    specs: {
+      Industry: "Automotive",
+      Material: "P20 Steel with nitriding",
+      Cavities: "4",
+      "Cycle Time": "45 seconds",
+      Delivery: "8 weeks",
+    },
   },
   {
-    title: "Rapid Prototyping",
+    title: "Electronic Enclosure Mould",
     description:
-      "Take advantage of DFM feedback in instant quotes to refine designs before manufacturing begins. Navigate quickly through prototyping iterations.",
-  },
-  {
-    title: "On-Going Production",
-    description:
-      "Complete program management with manufacturing experts who optimise your project around cost, quantity, and quality.",
-  },
-  {
-    title: "Short-Term Production",
-    description:
-      "Tap into production capabilities for short-term needs like jigs, fixtures, and industrial components, or managing end-of-lifecycle inventory.",
+      "High-precision 2-cavity mould for consumer electronics housing with tight tolerance requirements and complex geometry.",
+    specs: {
+      Industry: "Consumer Electronics",
+      Material: "H13 Steel with chrome plating",
+      Cavities: "2",
+      Tolerance: "\u00b10.05mm",
+      Delivery: "6 weeks",
+    },
   },
 ];
 
-// ============================================================
-// Product Life Cycle Page — detailed content for the dedicated page
-// ============================================================
-
-export const PRODUCT_LIFECYCLE_PAGE = {
-  hero: {
-    title: "Digital Manufacturing Across Your Product Life Cycle",
-    subtitle:
-      "We are your single resource from rapid prototyping to end-use production — and everything in between.",
-  },
-
-  fullSupport: {
-    title: "Get Full Product Life Cycle Support from Start to Finish",
-    description:
-      "Whether you need prototype parts in one day or full-service production, you can partner with us across your entire product life cycle for speed, quality, and cost-efficiency in every project. It's one resource to support you throughout your manufacturing journey.",
-    subsections: [
-      {
-        title: "End-to-End Product Development",
-        description:
-          "Optimise part design and move quickly through iterative development with our rapid prototyping and low-volume production services. When you're ready, work with our team of applications engineers to meet all of your production needs for end-use parts.",
-        icon: "Workflow",
-      },
-      {
-        title: "Supply Chain Diversification",
-        description:
-          "Build a manufacturing safety net into your supply chain that you can turn to during line-down situations or unplanned disruptions.",
-        icon: "ShieldCheck",
-      },
-    ],
-  },
-
-  prototyping: {
-    title: "Accelerate Product Development with Rapid Prototyping",
-    description:
-      "Take advantage of design for manufacturability (DFM) feedback in our instant quotes to make adjustments to part design before any actual manufacturing begins, then navigate quickly through early- and late-stage prototyping with ease.",
-    subsections: [
-      {
-        title: "Early Prototyping",
-        description:
-          "Get quality parts in hand within days for iterative prototype testing of form, fit, and function.",
-        icon: "FlaskConical",
-      },
-      {
-        title: "Late Prototyping",
-        description:
-          "Validate part designs with pilot runs and market testing to reduce design risk before production.",
-        icon: "ClipboardCheck",
-      },
-    ],
-  },
-
-  production: {
-    title: "Shift Seamlessly to End-Use Production",
-    description:
-      "You'll find complete program management at ProtoFab with a team of manufacturing experts who will help optimise your project around cost, quantity, and quality.",
-    subsections: [
-      {
-        title: "Low-Volume Production",
-        description:
-          "Ramp up production to get quality end-use parts to market fast and use batch production to reduce financial risk with no order minimums and low total cost of ownership.",
-        icon: "PackageCheck",
-      },
-      {
-        title: "Mass Production",
-        description:
-          "Order quantities up to 1,00,000+ parts with volume pricing built to fit your budget.",
-        icon: "Factory",
-      },
-      {
-        title: "On-Demand Production",
-        description:
-          "Build agility into your supply chain by ordering quick-turn parts when needed.",
-        icon: "Zap",
-      },
-    ],
-  },
-
-  shortTerm: {
-    title: "Leverage Short-Term Production",
-    subsections: [
-      {
-        title: "Jigs & Fixtures",
-        description:
-          "Streamline part assembly and help reduce production costs with durable jigs and fixtures.",
-        icon: "Wrench",
-      },
-      {
-        title: "End-of-Life Production",
-        description:
-          "Reduce your financial risk and warehousing costs during end of product life by ordering low volumes of product parts just in time.",
-        icon: "Clock",
-      },
-      {
-        title: "Maintenance, Repair & Operations (MRO)",
-        description:
-          "Order custom production parts on demand for MRO applications to keep equipment running without delay.",
-        icon: "Settings",
-      },
-    ],
-  },
-
-  resourceCards: [
-    {
-      title: "Digital Manufacturing from Prototyping to Production",
-      href: "/resources/prototyping-to-production",
-    },
-    {
-      title: "Production Manufacturing",
-      href: "/services/production",
-    },
-    {
-      title: "Manufacturing Materials",
-      href: "/materials",
-    },
+export const ABOUT_STORY = {
+  paragraphs: [
+    "Founded over 15 years ago in the heart of Delhi's industrial area, Sharma Tools has grown from a small workshop to one of India's most trusted names in precision injection mould manufacturing and CNC machining.",
+    "Our journey began with a simple mission: to provide OEMs and MSMEs with world-class tooling solutions that match international standards while remaining accessible and affordable. Today, we serve over 200 satisfied clients across diverse industries.",
+    "Through continuous investment in technology, training, and quality systems, we have built a reputation for excellence in design, manufacturing, and after-sales support.",
   ],
-
-  bottomCta: {
-    text: "Ready to move from prototyping to production with one digital manufacturing resource?",
-  },
+  mission:
+    "To deliver precision-engineered tooling solutions with unwavering commitment to quality, reliability, and continuous improvement. We aim to be a partner in our clients' success by providing innovative, cost-effective solutions backed by exceptional technical support.",
+  vision:
+    "To be recognized as India's most trusted tooling partner, setting industry benchmarks for quality, innovation, and customer satisfaction. We envision expanding our capabilities while maintaining the personal touch and technical excellence that define Sharma Tools.",
 };
 
-export const RESOURCES = [
+export const CORE_VALUES = [
+  { title: "Quality First", description: "Uncompromising standards in every project", icon: "Award" },
+  { title: "Reliability", description: "Consistent delivery on time, every time", icon: "Clock" },
+  { title: "Innovation", description: "Continuous improvement and technology adoption", icon: "Lightbulb" },
+  { title: "Integrity", description: "Transparent, honest business relationships", icon: "Shield" },
+];
+
+export const TIMELINE = [
+  { year: "2008", title: "Foundation", description: "Started operations with a small team and 2 CNC machines in Delhi" },
+  { year: "2012", title: "Expansion", description: "Expanded facility and added EDM capabilities, serving 50+ clients" },
+  { year: "2016", title: "ISO Certification", description: "Achieved ISO 9001:2015 certification for quality management" },
+  { year: "2020", title: "Technology Upgrade", description: "Invested in 5-axis CNC machines and advanced CAD/CAM systems" },
+  { year: "2024", title: "Present Day", description: "Serving 200+ clients with 500+ successful projects completed" },
+];
+
+export const SUCCESS_STORIES = [
   {
-    title: "Selecting a Material",
-    description:
-      "Choose from hundreds of commercial-grade plastic, metal, elastomer, and LSR materials for prototyping and production.",
-    tag: "Guide",
-    href: "/materials",
+    title: "Automotive Component",
+    description: "Delivered multi-cavity mould for automotive interior trim with 99.8% quality acceptance rate",
+    industry: "Automotive",
   },
   {
-    title: "Plastic Manufacturing Processes",
-    description:
-      "Learn how to select the best manufacturing process and material for your custom plastic parts.",
-    tag: "Guide",
-    href: "/resources/plastic-manufacturing",
+    title: "Electronics Housing",
+    description: "Precision moulds for consumer electronics with tight tolerances and complex geometries",
+    industry: "Electronics",
   },
   {
-    title: "Design for Machining Toolkit",
-    description:
-      "In-depth design advice to optimise your plastic and metal parts for CNC machining. Reduce costs and accelerate production.",
-    tag: "Toolkit",
-    href: "/resources/machining-toolkit",
-  },
-  {
-    title: "3D Printing Cost Factors",
-    description:
-      "Explore the factors that affect 3D printing costs and how to optimise your parts for cost-effective additive manufacturing.",
-    tag: "Design Tip",
-    href: "/resources/3d-printing-cost",
+    title: "Medical Device Component",
+    description: "Clean-room compatible moulds meeting stringent medical device manufacturing standards",
+    industry: "Medical",
   },
 ];
 
 export const FOOTER_LINKS = {
-  services: [
-    { label: "Injection Moulding", href: "/services/injection-moulding" },
-    { label: "CNC Machining", href: "/services/cnc-machining" },
-    { label: "3D Printing", href: "/services/3d-printing" },
-    { label: "Production Services", href: "/services/production" },
-  ],
-  company: [
+  "Quick Links": [
+    { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Why ProtoFab", href: "/about/why-protofab" },
-    { label: "Careers", href: "/careers" },
-    { label: "Locations", href: "/locations" },
-    { label: "Press", href: "/press" },
+    { label: "Services", href: "/services" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Industries", href: "/industries" },
+    { label: "Contact", href: "/contact" },
   ],
-  resources: [
-    { label: "Case Studies", href: "/resources/case-studies" },
-    { label: "Design Tips", href: "/resources/design-tips" },
-    { label: "Blog", href: "/resources/blog" },
-    { label: "Design Aids", href: "/resources/design-aids" },
-    { label: "FAQs", href: "/resources/faqs" },
-  ],
-  legal: [
-    { label: "ISO & Certifications", href: "/certifications" },
-    { label: "Legal Notices", href: "/legal" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms & Conditions", href: "/terms" },
+  "Our Services": [
+    { label: "Injection Mould Design", href: "/services" },
+    { label: "Mould Manufacturing", href: "/services" },
+    { label: "CNC Machining", href: "/services" },
+    { label: "Mould Repair", href: "/services" },
+    { label: "Injection Molding", href: "/services" },
   ],
 };
-
-export const TRUSTED_COMPANIES = [
-  "Tata Motors",
-  "Mahindra",
-  "ISRO",
-  "Wipro",
-  "L&T",
-  "Bharat Electronics",
-];

@@ -10,16 +10,16 @@ export default {
           200: "#bfdbfe",
           300: "#93c5fd",
           400: "#60a5fa",
-          500: "#0066CC",
-          600: "#005BB5",
-          700: "#004A94",
-          800: "#003973",
-          900: "#002952",
+          500: "#1a56db",
+          600: "#1648c0",
+          700: "#1239a3",
+          800: "#0e2d87",
+          900: "#0a1f5c",
         },
         accent: {
           400: "#f97316",
-          500: "#FF6B00",
-          600: "#e85d00",
+          500: "#ea580c",
+          600: "#c2410c",
         },
         surface: {
           50: "#f8fafc",
@@ -37,6 +37,7 @@ export default {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "slide-up": "slideUp 0.6s ease-out forwards",
         "slide-in-left": "slideInLeft 0.5s ease-out forwards",
+        "count-up": "countUp 0.4s ease-out forwards",
       },
       keyframes: {
         fadeIn: {
@@ -56,5 +57,3 @@ export default {
   },
   plugins: [],
 };
-
-
