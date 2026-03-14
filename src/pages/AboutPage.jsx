@@ -32,12 +32,23 @@ function StorySection() {
       <div className="container-max">
         <div
           ref={ref}
-          className={`max-w-3xl mx-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`grid md:grid-cols-2 gap-10 items-center transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <h2 className="text-3xl font-extrabold text-surface-900 mb-6">Our Story</h2>
-          {ABOUT_STORY.paragraphs.map((p, i) => (
-            <p key={i} className="text-surface-800/70 leading-relaxed mb-4">{p}</p>
-          ))}
+          {/* Factory image */}
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src="/assets/about/factory-workshop.jpg"
+              alt="Sharma Tools factory workshop"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-extrabold text-surface-900 mb-6">Our Story</h2>
+            {ABOUT_STORY.paragraphs.map((p, i) => (
+              <p key={i} className="text-surface-800/70 leading-relaxed mb-4">{p}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -50,15 +61,31 @@ function MissionVision() {
     <section className="section-padding bg-surface-50">
       <div
         ref={ref}
-        className={`container-max grid md:grid-cols-2 gap-8 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        className={`container-max transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       >
-        <div className="bg-white rounded-2xl p-8 border border-surface-100">
-          <h3 className="text-xl font-bold text-surface-900 mb-4">Our Mission</h3>
-          <p className="text-surface-800/70 leading-relaxed">{ABOUT_STORY.mission}</p>
+        {/* Team image banner */}
+        <div className="rounded-2xl overflow-hidden mb-8 h-56 relative">
+          <img
+            src="/assets/about/team-engineering.jpg"
+            alt="Sharma Tools engineering team"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary-900/50" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h2 className="text-3xl font-extrabold text-white drop-shadow-lg">What Drives Us</h2>
+          </div>
         </div>
-        <div className="bg-white rounded-2xl p-8 border border-surface-100">
-          <h3 className="text-xl font-bold text-surface-900 mb-4">Our Vision</h3>
-          <p className="text-surface-800/70 leading-relaxed">{ABOUT_STORY.vision}</p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-2xl p-8 border border-surface-100">
+            <h3 className="text-xl font-bold text-surface-900 mb-4">Our Mission</h3>
+            <p className="text-surface-800/70 leading-relaxed">{ABOUT_STORY.mission}</p>
+          </div>
+          <div className="bg-white rounded-2xl p-8 border border-surface-100">
+            <h3 className="text-xl font-bold text-surface-900 mb-4">Our Vision</h3>
+            <p className="text-surface-800/70 leading-relaxed">{ABOUT_STORY.vision}</p>
+          </div>
         </div>
       </div>
     </section>

@@ -40,13 +40,18 @@ function ServiceCard({ service, index }) {
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
-      {/* Icon / visual side */}
+      {/* Image side */}
       <div className={`${!isEven ? "md:order-2" : ""}`}>
-        <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.color} opacity-10 relative`}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} opacity-100 flex items-center justify-center shadow-2xl`}>
-              <Icon className="w-9 h-9 text-white" />
-            </div>
+        <div className="aspect-[4/3] rounded-2xl overflow-hidden relative group/img">
+          <img
+            src={service.image}
+            alt={service.title}
+            loading="lazy"
+            className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-t from-black/30 to-transparent`} />
+          <div className={`absolute bottom-4 left-4 w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-xl`}>
+            <Icon className="w-7 h-7 text-white" />
           </div>
         </div>
       </div>

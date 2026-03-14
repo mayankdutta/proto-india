@@ -72,6 +72,7 @@ export const SERVICES = [
     capabilities: "SolidWorks, Creo, CATIA, AutoCAD",
     icon: "PenTool",
     color: "from-blue-500 to-indigo-600",
+    image: "/assets/services/injection-mould-design.jpg",
   },
   {
     id: "injection-mould-manufacturing",
@@ -87,6 +88,7 @@ export const SERVICES = [
     capabilities: "Up to 500 ton mould capacity",
     icon: "Layers",
     color: "from-emerald-500 to-teal-600",
+    image: "/assets/services/injection-mould-manufacturing.jpg",
   },
   {
     id: "cnc-machining",
@@ -102,6 +104,7 @@ export const SERVICES = [
     capabilities: "Steel, aluminum, copper, exotic alloys",
     icon: "Cog",
     color: "from-orange-500 to-red-500",
+    image: "/assets/services/cnc-machining.jpg",
   },
   {
     id: "mould-repair",
@@ -117,6 +120,7 @@ export const SERVICES = [
     capabilities: "All mould types and sizes",
     icon: "Wrench",
     color: "from-violet-500 to-purple-600",
+    image: "/assets/services/mould-repair.jpg",
   },
   {
     id: "injection-molding-production",
@@ -132,6 +136,7 @@ export const SERVICES = [
     capabilities: "Thermoplastics & engineering plastics",
     icon: "Factory",
     color: "from-cyan-500 to-blue-600",
+    image: "/assets/services/injection-molding-production.jpg",
   },
   {
     id: "product-development",
@@ -147,6 +152,7 @@ export const SERVICES = [
     capabilities: "Full project management",
     icon: "Lightbulb",
     color: "from-amber-500 to-orange-600",
+    image: "/assets/services/product-development.jpg",
   },
 ];
 
@@ -190,6 +196,7 @@ export const INDUSTRIES = [
     description:
       "Precision moulds for electronic housings, connectors, and components",
     icon: "Smartphone",
+    image: "/assets/industries/consumer-electronics.jpg",
   },
   {
     id: "automotive",
@@ -197,6 +204,7 @@ export const INDUSTRIES = [
     description:
       "High-quality tooling for interior trim, under-hood components, and assemblies",
     icon: "Car",
+    image: "/assets/industries/automotive.jpg",
   },
   {
     id: "electrical",
@@ -204,6 +212,7 @@ export const INDUSTRIES = [
     description:
       "Moulds for switches, sockets, junction boxes, and electrical enclosures",
     icon: "Zap",
+    image: "/assets/industries/electrical.jpg",
   },
   {
     id: "appliances",
@@ -211,6 +220,7 @@ export const INDUSTRIES = [
     description:
       "Precision tooling for kitchen appliances, white goods, and consumer products",
     icon: "Refrigerator",
+    image: "/assets/industries/appliances.jpg",
   },
   {
     id: "packaging",
@@ -218,6 +228,7 @@ export const INDUSTRIES = [
     description:
       "Custom moulds for bottles, containers, caps, and packaging solutions",
     icon: "Package",
+    image: "/assets/industries/packaging.jpg",
   },
   {
     id: "medical",
@@ -225,6 +236,7 @@ export const INDUSTRIES = [
     description:
       "Clean-room compatible moulds for medical components and devices",
     icon: "Heart",
+    image: "/assets/industries/medical.jpg",
   },
 ];
 
@@ -277,14 +289,14 @@ export const TESTIMONIALS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { title: "CNC Machining Operation", category: "cnc" },
-  { title: "Precision Mould Manufacturing", category: "mould" },
-  { title: "CNC Lathe Work", category: "cnc" },
-  { title: "Industrial Tooling", category: "mould" },
-  { title: "Precision Manufacturing", category: "cnc" },
-  { title: "Welding Expertise", category: "manufacturing" },
-  { title: "Manufacturing Process", category: "manufacturing" },
-  { title: "Precision Gears", category: "manufacturing" },
+  { title: "CNC Machining Operation", category: "cnc", image: "/assets/gallery/cnc-machining-operation.jpg" },
+  { title: "Precision Mould Manufacturing", category: "mould", image: "/assets/gallery/precision-mould-manufacturing.jpg" },
+  { title: "CNC Lathe Work", category: "cnc", image: "/assets/gallery/cnc-lathe-work.jpg" },
+  { title: "Industrial Tooling", category: "mould", image: "/assets/gallery/industrial-tooling.jpg" },
+  { title: "Precision Manufacturing", category: "cnc", image: "/assets/gallery/precision-manufacturing.jpg" },
+  { title: "Welding Expertise", category: "manufacturing", image: "/assets/gallery/welding-expertise.jpg" },
+  { title: "Manufacturing Process", category: "manufacturing", image: "/assets/gallery/manufacturing-process.jpg" },
+  { title: "Precision Gears", category: "manufacturing", image: "/assets/gallery/precision-gears.jpg" },
 ];
 
 export const FEATURED_PROJECTS = [
@@ -299,6 +311,7 @@ export const FEATURED_PROJECTS = [
       "Cycle Time": "45 seconds",
       Delivery: "8 weeks",
     },
+    image: "/assets/featured/automotive-trim-mould.jpg",
   },
   {
     title: "Electronic Enclosure Mould",
@@ -311,6 +324,7 @@ export const FEATURED_PROJECTS = [
       Tolerance: "\u00b10.05mm",
       Delivery: "6 weeks",
     },
+    image: "/assets/featured/electronic-enclosure-mould.jpg",
   },
 ];
 

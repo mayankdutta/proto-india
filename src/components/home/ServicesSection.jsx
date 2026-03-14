@@ -31,40 +31,50 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.id}
-                className="group bg-white rounded-2xl p-6 border border-surface-100 card-hover"
+                className="group bg-white rounded-2xl overflow-hidden border border-surface-100 card-hover"
               >
-                <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
-                >
-                  <Icon className="w-6 h-6 text-white" />
+                {/* Service image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/50 to-transparent`} />
+                  <div className={`absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}>
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
                 </div>
 
-                <h3 className="mt-4 text-lg font-bold text-surface-900">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
-                  {service.shortDesc}
-                </p>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-surface-900">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
+                    {service.shortDesc}
+                  </p>
 
-                <ul className="mt-4 space-y-1.5">
-                  {service.features.slice(0, 3).map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-2 text-sm text-surface-800/70"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-4 space-y-1.5">
+                    {service.features.slice(0, 3).map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-center gap-2 text-sm text-surface-800/70"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
 
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-primary-500 hover:text-primary-600 transition-colors group/link"
-                >
-                  Learn more
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
-                </Link>
+                  <Link
+                    to="/services"
+                    className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-primary-500 hover:text-primary-600 transition-colors group/link"
+                  >
+                    Learn more
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
               </div>
             );
           })}

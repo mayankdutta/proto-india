@@ -8,8 +8,16 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background — layered gradient mesh with subtle grid */}
-      <div className="absolute inset-0 gradient-mesh" />
+      {/* Background — hero image with overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="/assets/hero/hero-bg.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/85" />
+      </div>
+      <div className="absolute inset-0 gradient-mesh opacity-60" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{

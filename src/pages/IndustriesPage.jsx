@@ -47,15 +47,27 @@ function IndustryCards() {
             return (
               <div
                 key={ind.id}
-                className="group bg-surface-50 rounded-2xl p-6 border border-surface-100 card-hover"
+                className="group bg-surface-50 rounded-2xl overflow-hidden border border-surface-100 card-hover"
               >
-                <div className="w-14 h-14 rounded-xl bg-primary-50 group-hover:bg-primary-500 flex items-center justify-center transition-colors duration-300">
-                  <Icon className="w-7 h-7 text-primary-500 group-hover:text-white transition-colors duration-300" />
+                {/* Industry image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={ind.image}
+                    alt={ind.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute bottom-3 left-3 w-11 h-11 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    <Icon className="w-6 h-6 text-primary-500" />
+                  </div>
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-surface-900">{ind.title}</h3>
-                <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
-                  {ind.description}
-                </p>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-surface-900">{ind.title}</h3>
+                  <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
+                    {ind.description}
+                  </p>
+                </div>
               </div>
             );
           })}
@@ -101,10 +113,11 @@ function WhyIndustries() {
 function SuccessStoriesSection() {
   const [ref, isInView] = useInView();
 
-  const gradients = [
-    "from-blue-400 to-indigo-600",
-    "from-emerald-400 to-teal-600",
-    "from-rose-400 to-pink-600",
+  // Map success story industries to relevant images
+  const storyImages = [
+    "/assets/industries/automotive.jpg",
+    "/assets/industries/consumer-electronics.jpg",
+    "/assets/industries/medical.jpg",
   ];
 
   return (
@@ -119,8 +132,15 @@ function SuccessStoriesSection() {
         >
           {SUCCESS_STORIES.map((story, i) => (
             <div key={story.title} className="rounded-2xl overflow-hidden border border-surface-100 card-hover">
-              <div className={`h-44 bg-gradient-to-br ${gradients[i]} opacity-80 flex items-center justify-center`}>
-                <span className="text-white/60 font-heading font-bold text-sm uppercase tracking-wider">
+              <div className="h-44 relative overflow-hidden">
+                <img
+                  src={storyImages[i]}
+                  alt={story.industry}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <span className="absolute bottom-3 left-4 text-white/90 font-heading font-bold text-sm uppercase tracking-wider drop-shadow-lg">
                   {story.industry}
                 </span>
               </div>

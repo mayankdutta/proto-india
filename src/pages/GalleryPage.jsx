@@ -64,23 +64,23 @@ function GalleryGrid() {
           }`}
         >
           {filtered.map((item, i) => {
-            // Deterministic gradient based on category
-            const gradients = {
-              cnc: "from-blue-400 to-indigo-600",
-              mould: "from-emerald-400 to-teal-600",
-              manufacturing: "from-orange-400 to-red-500",
-            };
             return (
               <div
                 key={`${item.title}-${i}`}
                 className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${gradients[item.category]} opacity-80 group-hover:opacity-90 transition-opacity`} />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute inset-0 flex flex-col items-center justify-end p-4 text-center">
                   <p className="text-white font-bold text-sm drop-shadow-lg">
                     {item.title}
                   </p>
-                  <span className="mt-2 text-[10px] uppercase tracking-wider text-white/70 font-semibold bg-white/10 px-2 py-0.5 rounded-full">
+                  <span className="mt-2 text-[10px] uppercase tracking-wider text-white/80 font-semibold bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full">
                     {item.category}
                   </span>
                 </div>
@@ -111,9 +111,16 @@ function FeaturedProjects() {
               key={project.title}
               className="bg-white rounded-2xl overflow-hidden border border-surface-100 card-hover"
             >
-              {/* Placeholder visual */}
-              <div className="h-48 bg-gradient-to-br from-primary-500/10 to-primary-600/5 flex items-center justify-center">
-                <span className="text-primary-500/30 font-heading font-bold text-xl">
+              {/* Project image */}
+              <div className="h-48 overflow-hidden relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <span className="absolute bottom-3 left-4 text-white/90 font-heading font-bold text-sm uppercase tracking-wider drop-shadow-lg">
                   {project.specs.Industry}
                 </span>
               </div>

@@ -30,14 +30,26 @@ export default function IndustriesSection() {
             return (
               <div
                 key={ind.id}
-                className="group bg-white rounded-2xl p-6 border border-surface-100 text-center card-hover"
+                className="group bg-white rounded-2xl overflow-hidden border border-surface-100 card-hover"
               >
-                <div className="w-14 h-14 mx-auto rounded-xl bg-primary-50 group-hover:bg-primary-500 flex items-center justify-center transition-colors duration-300">
-                  <Icon className="w-7 h-7 text-primary-500 group-hover:text-white transition-colors duration-300" />
+                {/* Industry image */}
+                <div className="relative h-28 overflow-hidden">
+                  <img
+                    src={ind.image}
+                    alt={ind.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <h3 className="mt-4 font-bold text-surface-900 text-sm lg:text-base">
-                  {ind.title}
-                </h3>
+                <div className="p-4 text-center">
+                  <div className="w-10 h-10 mx-auto -mt-9 relative z-10 rounded-lg bg-white shadow-md flex items-center justify-center border border-surface-100">
+                    <Icon className="w-5 h-5 text-primary-500" />
+                  </div>
+                  <h3 className="mt-2 font-bold text-surface-900 text-sm lg:text-base">
+                    {ind.title}
+                  </h3>
+                </div>
               </div>
             );
           })}
